@@ -7,12 +7,13 @@ class Questions
     @answer = @first_num + @second_num
     @current_player = current_player
 
-    puts "#{current_player}: What does #{@first_num} plus #{@second_num} equal to?"
-    ask_question
+    puts "#{@current_player.name}: What does #{@first_num} plus #{@second_num} equal to?"
+    # ask_question
   end
+
   def ask_question
     @input_answer = gets.chomp
-    if @input_answer == @answer
+    if @input_answer == @answer.to_s
       puts "Correct! Great job."
       @correct_answer = true
     else
@@ -20,5 +21,4 @@ class Questions
       @correct_answer= false
     end
   end
-
 end
